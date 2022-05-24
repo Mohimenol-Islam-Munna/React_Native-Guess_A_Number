@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Title from "./components/Title";
+import Header from "./components/Header";
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Title>Guess A Number</Title>
+    <View style={styles.screen}>
+      <Header>Guess A Number</Header>
     </View>
   );
 };
@@ -13,10 +13,7 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
