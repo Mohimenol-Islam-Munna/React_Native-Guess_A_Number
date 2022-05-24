@@ -1,23 +1,25 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { View, Text, Button, StyleSheet } from "react-native";
 
 // components/screen
 import Card from "../components/Card";
 import Color from "../theme/color";
+import Input from "../components/Input";
 
 const StartGameScreen = () => {
   const [inputNumber, setInputNumber] = useState("");
+
+  const inputChanageHandler = (enteredValue) => {
+    setInputNumber(enteredValue);
+  };
 
   return (
     <View style={styles.screen}>
       <Text>Start New Game</Text>
       <Card>
-        <TextInput
-          style={styles.textInput}
+        <Input
           value={inputNumber}
-          onChangeText={(enterdValue) => {
-            setInputNumber(enterdValue);
-          }}
+          inputChanageHandler={inputChanageHandler}
           placeholder="please put your number"
         />
         <View style={styles.buttonContainer}>
@@ -51,12 +53,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     alignItems: "center",
-  },
-
-  textInput: {
-    border: "1px solid gray",
-    padding: 10,
-    borderRadius: 20,
   },
 
   buttonContainer: {
