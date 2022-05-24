@@ -1,20 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 
+// components/screen
+import Card from "../components/Card";
+
 const StartGameScreen = () => {
+  const [inputNumber, setInputNumber] = useState("");
+
   return (
     <View style={styles.screen}>
       <Text>Start New Game</Text>
-      <View style={styles.inputContainer}>
+      <Card>
         <TextInput
           style={styles.textInput}
+          value={inputNumber}
+          onChangeText={(enterdValue) => {
+            setInputNumber(enterdValue);
+          }}
           placeholder="please put your number"
         />
         <View style={styles.buttonContainer}>
-          <Button title="reset" color="salmon" />
-          <Button title="confirm" />
+          <Button
+            title="reset"
+            color="salmon"
+            onPress={() => {
+              setInputNumber("");
+            }}
+          />
+          <Button
+            title="confirm"
+            onPress={() =>
+              console.log("confirm button :: inputNumber ::", inputNumber)
+            }
+          />
         </View>
-      </View>
+      </Card>
     </View>
   );
 };
@@ -24,21 +44,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     alignItems: "center",
-  },
-
-  inputContainer: {
-    width: 300,
-    maxWidth: "80%",
-    backgroundColor: "white",
-    marginVertical: 15,
-    padding: 15,
-    shadowColor: "balck",
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-    elevation: 50,
-    border: "1px solid grey",
-    borderRadius: 5,
   },
 
   textInput: {
