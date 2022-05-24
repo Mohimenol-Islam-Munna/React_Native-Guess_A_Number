@@ -13,6 +13,8 @@ const StartGameScreen = () => {
     setInputNumber(enteredValue);
   };
 
+  console.log("inputNumber ::", inputNumber);
+
   return (
     <View style={styles.screen}>
       <Text>Start New Game</Text>
@@ -20,7 +22,7 @@ const StartGameScreen = () => {
         <Input
           value={inputNumber}
           inputChanageHandler={inputChanageHandler}
-          placeholder="please put your number"
+          placeholder="please input your number"
         />
         <View style={styles.buttonContainer}>
           <View style={styles.button}>

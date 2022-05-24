@@ -7,6 +7,8 @@ const Input = ({ value, inputChanageHandler, placeholder }) => {
       style={styles.textInput}
       value={value}
       onChangeText={inputChanageHandler}
+      keyboardType="numeric"
+      maxLength={2}
       placeholder={placeholder}
     />
   );
@@ -14,7 +16,7 @@ const Input = ({ value, inputChanageHandler, placeholder }) => {
 
 const styles = StyleSheet.create({
   textInput: {
-    border: "1px solid gray",
+    border: `1px solid grey`,
     padding: 10,
     borderRadius: 20,
   },
