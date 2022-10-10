@@ -16,9 +16,11 @@ const Input = ({ value, inputChanageHandler, placeholder }) => {
 
 const styles = StyleSheet.create({
   textInput: {
-    border: `1px solid grey`,
+    width: 90,
+    marginHorizontal: "auto",
+    borderBottomWidth: 1,
     padding: 10,
-    borderRadius: 20,
+    borderRadius: 2,
   },
 });
 
